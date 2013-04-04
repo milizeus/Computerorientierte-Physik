@@ -76,7 +76,6 @@
 		297F0345170C4AB9003FD337 /* 03_RK4_Doppelpendel.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = 03_RK4_Doppelpendel.cpp; sourceTree = "<group>"; };
 		297F0347170C4AB9003FD337 /* _3_RK4_Doppelpendel.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = _3_RK4_Doppelpendel.1; sourceTree = "<group>"; };
 		297F034E170C4D72003FD337 /* 02_RK4_Oszillator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 02_RK4_Oszillator.cpp; sourceTree = "<group>"; };
-		297F0356170D53FD003FD337 /* 01_Rungekutta.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 01_Rungekutta.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,7 +158,6 @@
 		297F0344170C4AB9003FD337 /* 03_RK4_Doppelpendel */ = {
 			isa = PBXGroup;
 			children = (
-				297F0356170D53FD003FD337 /* 01_Rungekutta.cpp */,
 				297F0345170C4AB9003FD337 /* 03_RK4_Doppelpendel.cpp */,
 				297F0347170C4AB9003FD337 /* _3_RK4_Doppelpendel.1 */,
 			);
