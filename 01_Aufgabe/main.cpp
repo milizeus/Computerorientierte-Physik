@@ -1,8 +1,8 @@
 //
 //  main.cpp
-//  Computerorientierte Physik
+//  01_Aufgabe
 //
-//  Created by milizeus on 12.03.13.
+//  Created by milizeus on 13.03.13.
 //  Copyright (c) 2013 uni-graz. All rights reserved.
 //
 
