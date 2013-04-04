@@ -1,10 +1,10 @@
 
-/********************************************************************************************/
-/* Aufgabe: Runge Kutta vierter Ordnung / Doppelpendel                                      */
-/* file:    03_RK4_Doppelpendel.cpp                                                             */
-/* Autor:   Milionis Philipp / 1010925                                                      */
-/* Datum:   2013-04-03                                                                      */
-/********************************************************************************************/
+/**************************************************************/
+/* Aufgabe: Runge Kutta vierter Ordnung / Doppelpendel        */
+/* file:    03_RK4_Doppelpendel.cpp                           */
+/* Autor:   Milionis Philipp / 1010925                        */
+/* Datum:   2013-04-03                                        */
+/**************************************************************/
 
 #include <stdio.h>
 #include <cmath>
@@ -12,12 +12,12 @@
 #include <fstream>
 using namespace std;
 
-/********************************************************************************************/
-/* Parameter                                                                               */
-/********************************************************************************************/
-#define N_ODEs      4                                       // number of first order equations
-#define DELTA_T     0.001                                     // epsilonsize in s
-#define T_MAX       2                               // max for t
+/**************************************************************/
+/* Parameter                                                  */
+/**************************************************************/
+#define N_ODEs      4                   // number of ODE
+#define DELTA_T     0.001               // epsilonsize in s
+#define T_MAX       2                   // max for t
 
 const double    g=9.81;
 double          m=1;
@@ -28,9 +28,9 @@ double          l=1;
 #define INITIAL_Y2  0.0                                     // p 1
 #define INITIAL_Y3  0.0                                     // p 2
 
-/********************************************************************************************/
-/* ODEs                                                                                     */
-/********************************************************************************************/
+/**************************************************************/
+/* ODEs                                                       */
+/**************************************************************/
 double  F_ODE(double time, double y[], int i) {
     
     if (i==0) return(
@@ -50,9 +50,9 @@ double  F_ODE(double time, double y[], int i) {
                      );
 }
 
-/********************************************************************************************/
-/* main start                                                                               */
-/********************************************************************************************/
+/**************************************************************/
+/* main start                                                 */
+/**************************************************************/
 
 int main(void){
     cout << endl << endl <<
@@ -63,16 +63,17 @@ int main(void){
     " ******************************************************" << endl << endl;
     
     ofstream dataoutput("03_RK4_Doppelpendel.dat");
-   // dataoutput.setf(ios_base::scientific,ios_base::floatfield);
+    dataoutput.setf(ios_base::scientific,ios_base::floatfield);
     
     double time = 0.0, y[N_ODEs];
-    //int j,k;
-    void runge4(double x, double y[], double epsilon);              // Runge-Kutta function
+
     
-    y[0]=INITIAL_Y0;                                                // initial Y[0]
-    y[1]=INITIAL_Y1;                                                // initial Y[1]
-    y[2]=INITIAL_Y2;                                                // initial Y[1]
-    y[3]=INITIAL_Y3;                                                // initial Y[1]
+    void runge4(double x, double y[], double epsilon);  // RK4
+    
+    y[0]=INITIAL_Y0;                                    // initial Y[0]
+    y[1]=INITIAL_Y1;                                    // initial Y[1]
+    y[2]=INITIAL_Y2;                                    // initial Y[1]
+    y[3]=INITIAL_Y3;                                    // initial Y[1]
     dataoutput  << "# t" << " "  << "x" << " "  << "v" << endl;
     dataoutput  << time << " "  << y[0] << " "  << y[1] << " "  << y[2] << " "  << y[3] << endl;
     
@@ -89,9 +90,9 @@ int main(void){
     return 0;
 }
 
-/********************************************************************************************/
-/* RK4                                                                                      */
-/********************************************************************************************/
+/**************************************************************/
+/* RK4                                                        */
+/**************************************************************/
 void runge4(double time, double y[], double epsilon) {
     double h=epsilon/2.0;                                              // the midpoint
     double t1[N_ODEs], t2[N_ODEs], t3[N_ODEs];                         // temporary storage arrays
