@@ -17,17 +17,17 @@ using namespace std;
 /* Parameter                                                  */
 /**************************************************************/
 #define         N_ODEs      4                   // number of ODE
-const double    DELTA_T    =0.001;               // epsilonsize in s
+const double    DELTA_T    =0.01;               // epsilonsize in s
 const double    T_MAX      =60.0;                 // max for t
 
-const double    g           =10;
+const double    g           =9.81;
 const double    m           =1.0;
 const double    l           =1.0;
 
-const double    INITIAL_Y0      =0.0;                             // phi 1
-const double    INITIAL_Y1      =0.0;                            // phi 2
-const double    INITIAL_Y2      =1.0;                             // p 1
-const double    INITIAL_Y3      =6.0;                             // p 2
+const double    INITIAL_Y0      =0*M_PI/4;                             // phi 1
+const double    INITIAL_Y1      =0*M_PI/4;                            // phi 2
+const double    INITIAL_Y2      =0.0;                             // p 1
+const double    INITIAL_Y3      =1.0;                             // p 2
 
 
 /**************************************************************/
@@ -45,23 +45,27 @@ int main(void){
     ofstream dataoutput("03_RK4_Doppelpendel.dat");
     dataoutput.setf(ios_base::scientific,ios_base::floatfield);
     
-    double time = 0.0, y[N_ODEs], NRG;
+    double time = 0.0, y[N_ODEs], NRG = 0.0, pos1[2], pos2[2];
 
     void F_ODE(double time, double y[], int i);
     void runge4(double x, double y[], double epsilon);  // RK4
     double energie ( double y[]);
+    void position(double y[], double pos1[],double pos2[]);
     
     y[0]=INITIAL_Y0;                                    // initial Y[0]
     y[1]=INITIAL_Y1;                                    // initial Y[1]
     y[2]=INITIAL_Y2;                                    // initial Y[1]
     y[3]=INITIAL_Y3;                                    // initial Y[1]
-    dataoutput  << "# time" << "\t" << "phi1"<< "\t"<< "phi2"<<"\t"<<"p1"<<"\t"<<"p2" << endl;
-    dataoutput  << time << "\t"  << y[0] << "\t"  << y[1] << "\t"  << y[2] << "\t"  << y[3] << endl;
+    position(y, pos1, pos2);
+
+    dataoutput  << "# time" << "\t" << "phi1"<< "\t"<< "phi2"<<"\t"<<"p1"<<"\t"<<"p2" <<"\t"<<"energy" <<"\t"<<"x0" <<"\t"<<"y0" <<"\t"<<"x1" <<"\t"<<"y1" <<"\t"<<"x2" <<"\t"<<"y2"  << endl;
+    dataoutput  << time << "\t"  << y[0] << "\t"  << y[1] << "\t"  << y[2] << "\t"  << y[3] << "\t"<< NRG << "\t"<< 0 << "\t"<< 0 << "\t"<< pos1[0] << "\t"<< pos1[1] << "\t"<< pos2[0] << "\t"<< pos2[1] << endl;
     
-    for (time=0; time <= T_MAX+DELTA_T/5.0 ; time+=DELTA_T) {
+    for (time=0; time <= T_MAX ; time+=DELTA_T) {
         runge4(time, y, DELTA_T);
+        position(y, pos1, pos2);
         NRG = energie(y);
-        dataoutput  << time << "\t"  << y[0] << "\t"  << y[1] << "\t"  << y[2] << "\t"  << y[3] << "\t"<< NRG << endl;
+        dataoutput  << time << "\t"  << y[0] << "\t"  << y[1] << "\t"  << y[2] << "\t"  << y[3] << "\t"<< NRG << "\t"<< 0 << "\t"<< 0 << "\t"<< pos1[0] << "\t"<< pos1[1] << "\t"<< pos2[0] << "\t"<< pos2[1] << endl;
     }
     
     printf(" Datenfile 03_RK4_Doppelpendel.dat geschrieben");
@@ -122,6 +126,20 @@ void runge4(double time, double y[], double epsilon) {
 double energie ( double y[])
 {
     return (y[2]*y[2]+2*y[3]*y[3]-2*y[2]*y[3]*cos(y[0]-y[1]))/(2*m*l*l)/(1+sin(y[0]-y[1])*sin(y[0]-y[1]))+m*g*l*(3-2*cos(y[0])-cos(y[1]));
+}
+
+
+/**************************************************************/
+/* Position der Massen                                        */
+/**************************************************************/
+
+void position(double y[], double pos1[],double pos2[]) {
+    
+    pos1[0]= l * sin(y[0]);
+    pos2[0]= pos1[0] + l * sin(y[1]);
+    
+    pos1[1]= -l * cos(y[0]);
+    pos2[1]= pos1[1]-l * cos(y[1]);
 }
 
 
