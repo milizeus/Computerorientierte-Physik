@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2919428A16F778AE00E0D7A6 /* 03_Doppelpendel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2919428916F778AE00E0D7A6 /* 03_Doppelpendel.cpp */; };
-		2919428C16F778AE00E0D7A6 /* _3_Doppelpendel.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2919428B16F778AE00E0D7A6 /* _3_Doppelpendel.1 */; };
 		296DD16416F12A3900778FB9 /* _2_Runge_Kutta.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 296DD16316F12A3900778FB9 /* _2_Runge_Kutta.1 */; };
 		296DD17516F12B3000778FB9 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 296DD17416F12B3000778FB9 /* main.cpp */; };
 		296DD17716F12B3000778FB9 /* _1_Aufgabe.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 296DD17616F12B3000778FB9 /* _1_Aufgabe.1 */; };
@@ -24,7 +22,6 @@
 			dstPath = /usr/share/man/man1/;
 			dstSubfolderSpec = 0;
 			files = (
-				2919428C16F778AE00E0D7A6 /* _3_Doppelpendel.1 in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
@@ -61,14 +58,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		29126F2716FF93DF0072A426 /* A_2013-03-18.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "A_2013-03-18.pdf"; sourceTree = "<group>"; };
 		29126F2816FF94030072A426 /* A_2013-03-04.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "A_2013-03-04.pdf"; sourceTree = "<group>"; };
 		29126F2916FF94210072A426 /* A_2013-03-11.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "A_2013-03-11.pdf"; sourceTree = "<group>"; };
 		2919428116F773A200E0D7A6 /* 02_Runge-Kutta */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "02_Runge-Kutta"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2919428216F773A200E0D7A6 /* 01_Aufgabe */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = 01_Aufgabe; sourceTree = BUILT_PRODUCTS_DIR; };
-		2919428716F778AE00E0D7A6 /* 03_Doppelpendel */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = 03_Doppelpendel; sourceTree = BUILT_PRODUCTS_DIR; };
-		2919428916F778AE00E0D7A6 /* 03_Doppelpendel.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = 03_Doppelpendel.cpp; sourceTree = "<group>"; };
-		2919428B16F778AE00E0D7A6 /* _3_Doppelpendel.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = _3_Doppelpendel.1; sourceTree = "<group>"; };
+		2919428716F778AE00E0D7A6 /* 03_Doppelpendel */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; name = 03_Doppelpendel; path = "/Users/milizeus/Documents/C++/Computerorientierte Physik/build/Release/03_Doppelpendel"; sourceTree = "<absolute>"; };
 		296DD16316F12A3900778FB9 /* _2_Runge_Kutta.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = _2_Runge_Kutta.1; sourceTree = "<group>"; };
 		296DD17416F12B3000778FB9 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		296DD17616F12B3000778FB9 /* _1_Aufgabe.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = _1_Aufgabe.1; sourceTree = "<group>"; };
@@ -76,6 +70,7 @@
 		297F0345170C4AB9003FD337 /* 03_RK4_Doppelpendel.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = 03_RK4_Doppelpendel.cpp; sourceTree = "<group>"; };
 		297F0347170C4AB9003FD337 /* _3_RK4_Doppelpendel.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = _3_RK4_Doppelpendel.1; sourceTree = "<group>"; };
 		297F034E170C4D72003FD337 /* 02_RK4_Oszillator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 02_RK4_Oszillator.cpp; sourceTree = "<group>"; };
+		297F0359170EF97A003FD337 /* A_2013-03-18.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "A_2013-03-18.pdf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,26 +105,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2919428816F778AE00E0D7A6 /* 03_Doppelpendel */ = {
-			isa = PBXGroup;
-			children = (
-				29126F2716FF93DF0072A426 /* A_2013-03-18.pdf */,
-				2919428916F778AE00E0D7A6 /* 03_Doppelpendel.cpp */,
-				2919428B16F778AE00E0D7A6 /* _3_Doppelpendel.1 */,
-			);
-			path = 03_Doppelpendel;
-			sourceTree = "<group>";
-		};
 		291F637316EF6ED9001F8A4C = {
 			isa = PBXGroup;
 			children = (
 				296DD17316F12B3000778FB9 /* 01_Aufgabe */,
 				296DD16016F12A3900778FB9 /* 02_RK4_Oszillator */,
-				2919428816F778AE00E0D7A6 /* 03_Doppelpendel */,
 				297F0344170C4AB9003FD337 /* 03_RK4_Doppelpendel */,
 				2919428216F773A200E0D7A6 /* 01_Aufgabe */,
 				2919428116F773A200E0D7A6 /* 02_Runge-Kutta */,
-				2919428716F778AE00E0D7A6 /* 03_Doppelpendel */,
 				297F0343170C4AB9003FD337 /* 03_RK4_Doppelpendel */,
 			);
 			sourceTree = "<group>";
@@ -158,6 +141,7 @@
 		297F0344170C4AB9003FD337 /* 03_RK4_Doppelpendel */ = {
 			isa = PBXGroup;
 			children = (
+				297F0359170EF97A003FD337 /* A_2013-03-18.pdf */,
 				297F0345170C4AB9003FD337 /* 03_RK4_Doppelpendel.cpp */,
 				297F0347170C4AB9003FD337 /* _3_RK4_Doppelpendel.1 */,
 			);
@@ -269,7 +253,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2919428A16F778AE00E0D7A6 /* 03_Doppelpendel.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
