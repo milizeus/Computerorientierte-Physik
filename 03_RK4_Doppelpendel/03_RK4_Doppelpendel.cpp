@@ -10,172 +10,205 @@
 #include <cmath>
 #include <iostream>
 #include <fstream>
+
 using namespace std;
 
-/****************************************************************/
-/*	Parameter													*/
-/****************************************************************/
+/****************************************************************************/
+/*	Parameter																*/
+/****************************************************************************/
 
 #define			N_ODEs		4						// number of ODE
-const double	DELTA_T		=0.001;					// epsilonsize in s
-const double	T_MAX		=60.0;					// max for t
+const double	EPS			=0.001;					// epsilon in s
+const double	TIME_MAX	=60.0;			// max for t ss*mm*hh*dd
 
-const double	g			=9.81;
-const double	m			=1.0;
-const double	l			=1.0;
+const double	G			=9.81;
+const double	M			=1.0;
+const double	L			=1.0;
 
-const double	INITIAL_Y0	=3*M_PI/4 +0.0 ;		// phi 1
-const double	INITIAL_Y1	=4*M_PI/4 +0.0;			// phi 2
-const double	INITIAL_Y2	=0.0;					// p 1
-const double	INITIAL_Y3	=0.0;					// p 2
+const double	INI_Y0		=  M_PI*2/3 ;				// phi 1
+const double	INI_Y1		= -M_PI*2/3 ;				// phi 2
+const double	INI_Y2		=  0.0 ;				// p 1
+const double	INI_Y3		=  0.0 ;				// p 2
 
-/****************************************************************/
-/*	Prototypen													*/
-/****************************************************************/
+/****************************************************************************/
+/*	Prototypen																*/
+/****************************************************************************/
 
-double F_ODE	(double time,	double y[],		int i);
-double runge4	(double x,		double y[],		double epsilon);
-double energie	( double y[]);
-double position	(double y[],	double pos1[],	double pos2[]);
-double poincare	(double y[],	double poinval[]);
+double F_ODE	(double TIME,	double Y[],		int I);
+double runge4	(double TIME,	double Y[],		double EPS);
+double ENERGY	(double Y[]);
+double position	(double Y[],	double POS1[],	double POS2[]);
+double poincare	(double Y[],	double POINVAL[]);
 
 
-/****************************************************************/
-/*	main														*/
-/****************************************************************/
+/****************************************************************************/
+/*	main																	*/
+/****************************************************************************/
 
 int main(void){
 	
 	cout << endl << endl <<
-	" *******************************************************************" << endl <<
-	" Project: Computerorientierte Physik /" << " 03_RK4_Doppelpendel.cpp" << endl <<
-	" Author:  MILIONIS Philipp / 1010925" << endl <<
-	" Date:    2013-03-12" << endl <<
-	" *******************************************************************" << endl << endl;
+	" ************************************************************" << endl <<
+	" Project:	Computerorientierte Physik 03_RK4_Doppelpendel.cpp" << endl <<
+	" Author:	MILIONIS Philipp / 1010925" << endl <<
+	" Date:		2013-04-03" << endl <<
+	" ************************************************************" << endl;
 	
-	ofstream dataoutput("03_RK4_Doppelpendel.dat");
-	dataoutput.setf(ios_base::scientific,ios_base::floatfield);
-	double time = 0.0, y[N_ODEs], NRG = 0.0, pos1[2], pos2[2], poinval[4];
+	// data file
+	ofstream DATAFILE("03_RK4_Doppelpendel.dat");
+	DATAFILE.setf(ios_base::scientific,ios_base::floatfield);
+	
+	double TIME = 0.0, Y[N_ODEs], NRG = 0.0, POS1[2], POS2[2], POINVAL[4];
 
+	Y[0]=INI_Y0;
+	Y[1]=INI_Y1;
+	Y[2]=INI_Y2;
+	Y[3]=INI_Y3;
+	position(Y, POS1, POS2);
+	poincare(Y, POINVAL);
 
-	y[0]=INITIAL_Y0;			// initial Y[0]
-	y[1]=INITIAL_Y1;			// initial Y[1]
-	y[2]=INITIAL_Y2;			// initial Y[1]
-	y[3]=INITIAL_Y3;			// initial Y[1]
-	position(y, pos1, pos2);
-	poincare(y, poinval);
+	DATAFILE	<< "# t" << "\t" << "phi1"<< "\t"<< "phi2"<<"\t"<<"p1"<<"\t"<<"p2"
+				<< "\t" << "energy"
+				<< "\t" << "x0" <<"\t"<<"y0" <<"\t"<<"x1" <<"\t"<<"y1" <<"\t"<<"x2" <<"\t"<<"y2"
+				<< "\t" << "poin-phi1"  << "\t" << "poin-phi2" << "\t" << "poin-p1"  << "\t" << "poin-p2"  << endl;
 
+	DATAFILE	<< TIME << "\t" << Y[0] << "\t" << Y[1] << "\t" << Y[2] << "\t" << Y[3]
+				<< "\t" << NRG
+				<< "\t" << 0 << "\t"<< 0 << "\t"<< POS1[0] << "\t"<< POS1[1] << "\t"<< POS2[0] << "\t"<< POS2[1]
+				<< "\t" << POINVAL[0]<< "\t"<< POINVAL[1] << "\t"<< POINVAL[2]<< "\t"<< POINVAL[3] << endl;
 
-	dataoutput << "# t" << "\t" << "phi1"<< "\t"<< "phi2"<<"\t"<<"p1"<<"\t"<<"p2"
-	<< "\t" << "energy"
-	<< "\t" << "x0" <<"\t"<<"y0" <<"\t"<<"x1" <<"\t"<<"y1" <<"\t"<<"x2" <<"\t"<<"y2"
-	<< "\t" << "poin-phi1"  << "\t" << "poin-phi2" << "\t" << "poin-p1"  << "\t" << "poin-p2"  << endl;
+	for (TIME=0; TIME <= TIME_MAX ; TIME+=EPS) {
+		
+		// Ausgabe Fortschritt in Sekunden (funktioniert nicht ganz sauber, ist mir aber egal)
+		double tmp= (double)(int)(TIME) ;
+		if (     TIME - tmp < 0.001) {
+		cout  << TIME << "s von " << TIME_MAX << "s" << endl ;
+		}
+		
+		runge4(TIME, Y, EPS);
+		position(Y, POS1, POS2);
+		NRG = ENERGY(Y);
+		poincare(Y, POINVAL);
 
-	dataoutput << time << "\t"  << y[0] << "\t"  << y[1] << "\t"  << y[2] << "\t"  << y[3];
-	dataoutput << "\t" << NRG;
-	dataoutput << "\t" << 0 << "\t"<< 0 << "\t"<< pos1[0] << "\t"<< pos1[1] << "\t"<< pos2[0] << "\t"<< pos2[1];
-	dataoutput << "\t" << poinval[0]<< "\t"<< poinval[1] << "\t"<< poinval[2]<< "\t"<< poinval[3] << endl;
-
-
-	for (time=0; time <= T_MAX ; time+=DELTA_T) {
-		runge4(time, y, DELTA_T);
-		position(y, pos1, pos2);
-		NRG = energie(y);
-		poincare(y, poinval);
-
-		dataoutput << time << "\t"  << y[0] << "\t"  << y[1] << "\t"  << y[2] << "\t"  << y[3];
-		dataoutput << "\t" << NRG;
-		dataoutput << "\t" << 0 << "\t"<< 0 << "\t"<< pos1[0] << "\t"<< pos1[1] << "\t"<< pos2[0] << "\t"<< pos2[1];
-		dataoutput << "\t" << poinval[0]<< "\t"<< poinval[1] << "\t"<< poinval[2]<< "\t"<< poinval[3] << endl;
+		DATAFILE	<< TIME << "\t" << Y[0] << "\t" << Y[1] << "\t" << Y[2] << "\t" << Y[3]
+			<< "\t" << NRG
+			<< "\t" << 0 << "\t"<< 0 << "\t"<< POS1[0] << "\t"<< POS1[1] << "\t"<< POS2[0] << "\t"<< POS2[1]
+			<< "\t" << POINVAL[0]<< "\t"<< POINVAL[1] << "\t"<< POINVAL[2]<< "\t"<< POINVAL[3] << endl;
 	}
-
-	printf(" Datenfile 03_RK4_Doppelpendel.dat geschrieben");
+	
+	cout << endl << " Datenfile 03_RK4_Doppelpendel.dat geschrieben";
 
 	cout << endl << endl << " fertig 03_RK4_Doppelpendel.cpp " << endl << endl;
 
 	return 0;
 }
 
+/****************************************************************************/
+/* ODEs																		*/
+/****************************************************************************/
 
+double  F_ODE(double TIME, double Y[], int I) {
 
-/**************************************************************/
-/* ODEs                                                       */
-/**************************************************************/
-double  F_ODE(double time, double y[], int i) {
+	if (I==0)
+		return(
+			   1/(M*L*L)*(Y[2]-Y[3]*cos(Y[0]-Y[1]))/
+			   (1+sin(Y[0]-Y[1])*sin(Y[0]-Y[1]))
+			   );
 
-	if (i==0) return(
-					 1/(m*l*l)*(y[2]-y[3]*cos(y[0]-y[1]))/(1+sin(y[0]-y[1])*sin(y[0]-y[1]))
-					 );
+	if (I==1)
+		return(
+			   1/(M*L*L)*(2*Y[3]-Y[2]*cos(Y[0]-Y[1]))/
+			   (1+sin(Y[0]-Y[1])*sin(Y[0]-Y[1]))
+			   );
 
-	if (i==1) return(
-					 1/(m*l*l)*(2*y[3]-y[2]*cos(y[0]-y[1]))/(1+sin(y[0]-y[1])*sin(y[0]-y[1]))
-					 );
+	if (I==2)
+		return(
+			   -1/(M*L*L)*(Y[2]*Y[3]*sin(Y[0]-Y[1]))/
+			   (1+sin(Y[0]-Y[1])*sin(Y[0]-Y[1]))+
+			   1/(M*L*L)*(Y[2]*Y[2]+2*Y[3]*Y[3]-2*Y[2]*Y[3]*cos(Y[0]-Y[1]))/
+			   ((1+sin(Y[0]-Y[1])*sin(Y[0]-Y[1]))*(1+sin(Y[0]-Y[1])*sin(Y[0]-Y[1])))*
+			   sin(Y[0]-Y[1])*cos(Y[0]-Y[1])-2*M*G*L*sin(Y[0])
+			   );
 
-	if (i==2) return(
-					 -1/(m*l*l)*(y[2]*y[3]*sin(y[0]-y[1]))/(1+sin(y[0]-y[1])*sin(y[0]-y[1]))+1/(m*l*l)*(y[2]*y[2]+2*y[3]*y[3]-2*y[2]*y[3]*cos(y[0]-y[1]))/((1+sin(y[0]-y[1])*sin(y[0]-y[1]))*(1+sin(y[0]-y[1])*sin(y[0]-y[1])))*sin(y[0]-y[1])*cos(y[0]-y[1])-2*m*g*l*sin(y[0])
-					 );
-
-	if (i==3) return(
-					 1/(m*l*l)*(y[2]*y[3]*sin(y[0]-y[1]))/(1+sin(y[0]-y[1])*sin(y[0]-y[1]))-1/(m*l*l)*(y[2]*y[2]+2*y[3]*y[3]-2*y[2]*y[3]*cos(y[0]-y[1]))/((1+sin(y[0]-y[1])*sin(y[0]-y[1]))*(1+sin(y[0]-y[1])*sin(y[0]-y[1])))*sin(y[0]-y[1])*cos(y[0]-y[1])-m*g*l*sin(y[1])
-					 );
+	if (I==3)
+		return(
+			   1/(M*L*L)*(Y[2]*Y[3]*sin(Y[0]-Y[1]))/
+			   (1+sin(Y[0]-Y[1])*sin(Y[0]-Y[1]))-
+			   1/(M*L*L)*(Y[2]*Y[2]+2*Y[3]*Y[3]-2*Y[2]*Y[3]*cos(Y[0]-Y[1]))/
+			   ((1+sin(Y[0]-Y[1])*sin(Y[0]-Y[1]))*(1+sin(Y[0]-Y[1])*sin(Y[0]-Y[1])))*
+			   sin(Y[0]-Y[1])*cos(Y[0]-Y[1])-M*G*L*sin(Y[1])
+			   );
 }
 
+/****************************************************************************/
+/* RK4																		*/
+/****************************************************************************/
 
-/**************************************************************/
-/* RK4															*/
-/**************************************************************/
+double runge4(double TIME, double Y[], double EPS) {
+	double h=EPS/2.0;
+	double T1[N_ODEs], T2[N_ODEs], T3[N_ODEs];
+	double K1[N_ODEs], K2[N_ODEs], K3[N_ODEs],K4[N_ODEs];
+	int I;
 
-double runge4(double time, double y[], double epsilon) {
-	double h=epsilon/2.0;
-	double t1[N_ODEs], t2[N_ODEs], t3[N_ODEs];                         // tmp
-	double k1[N_ODEs], k2[N_ODEs], k3[N_ODEs],k4[N_ODEs];
-	int i;
-
-	for (i=0; i < N_ODEs ; i++) t1[i] = y[i]+   0.5*(k1[i] = epsilon * F_ODE ( time            , y  , i ));
-	for (i=0; i < N_ODEs ; i++) t2[i] = y[i]+   0.5*(k2[i] = epsilon * F_ODE ( time + h        , t1 , i ));
-	for (i=0; i < N_ODEs ; i++) t3[i] = y[i]+       (k3[i] = epsilon * F_ODE ( time + h        , t2 , i ));
-	for (i=0; i < N_ODEs ; i++)                     (k4[i] = epsilon * F_ODE ( time + epsilon  , t3 , i ));
-
-	for (i=0; i < N_ODEs ; i++) y[i] += ( k1[i] + 2*k2[i] + 2*k3[i] + k4[i] ) / 6.0;
+	for (I=0; I < N_ODEs ; I++)
+		T1[I] = Y[I]+0.5*	(K1[I] = EPS * F_ODE ( TIME			, Y  , I ));
 	
-}
-
-
-/**************************************************************/
-/* Energie														*/
-/**************************************************************/
-
-double energie ( double y[])
-{
-    return (y[2]*y[2]+2*y[3]*y[3]-2*y[2]*y[3]*cos(y[0]-y[1]))/(2*m*l*l)/(1+sin(y[0]-y[1])*sin(y[0]-y[1]))+m*g*l*(3-2*cos(y[0])-cos(y[1]));
-}
-
-
-/**************************************************************/
-/* Position der Massen											*/
-/**************************************************************/
-
-double position(double y[], double pos1[],double pos2[]) {
-
-	pos1[0]= l * sin(y[0]);
-	pos2[0]= pos1[0] + l * sin(y[1]);
+	for (I=0; I < N_ODEs ; I++)
+		T2[I] = Y[I]+0.5*	(K2[I] = EPS * F_ODE ( TIME + h		, T1 , I ));
 	
-	pos1[1]= -l * cos(y[0]);
-	pos2[1]= pos1[1]-l * cos(y[1]);
+	for (I=0; I < N_ODEs ; I++)
+		T3[I] = Y[I]+		(K3[I] = EPS * F_ODE ( TIME + h		, T2 , I ));
+	
+	for (I=0; I < N_ODEs ; I++)
+							(K4[I] = EPS * F_ODE ( TIME + EPS	, T3 , I ));
+
+	for (I=0; I < N_ODEs ; I++)
+		Y[I] += ( K1[I] + 2*K2[I] + 2*K3[I] + K4[I] ) / 6.0;
 }
 
-/**************************************************************/
-/* Poincare														*/
-/**************************************************************/
+/****************************************************************************/
+/* Energie																	*/
+/****************************************************************************/
 
-double poincare(double y[], double poinval[]) {
+double ENERGY ( double Y[]){
+	return (Y[2]*Y[2]+2*Y[3]*Y[3]-2*Y[2]*Y[3]*cos(Y[0]-Y[1]))
+	/(2*M*L*L)/
+	(1+sin(Y[0]-Y[1])*sin(Y[0]-Y[1]))+M*G*L*(3-2*cos(Y[0])-cos(Y[1]));
+}
+
+/****************************************************************************/
+/* Position der Massen														*/
+/****************************************************************************/
+
+double position(double Y[], double POS1[],double POS2[]) {
+	POS1[0]= L * sin(Y[0]);
+	POS2[0]= POS1[0] + L * sin(Y[1]);
 	
-	if(abs(y[1])<0.01 && y[3] > 0.0){
+	POS1[1]= -L * cos(Y[0]);
+	POS2[1]= POS1[1]-L * cos(Y[1]);
+}
+
+/****************************************************************************/
+/* Poincare																	*/
+/****************************************************************************/
+
+double poincare(double Y[], double POINVAL[]) {
+	if(abs(Y[1])<0.005 and Y[3] > 0.0){
 		
-		poinval[0]=y[0];
-		poinval[1]=y[1];
-		poinval[2]=y[2];
-		poinval[3]=y[3];
+		if	( Y[0] < -M_PI )	Y[0] = Y[0] + 2.0 * M_PI;
+		if	( Y[0] >  M_PI )	Y[0] = Y[0] - 2.0 * M_PI;
+		if	( Y[1] < -M_PI )	Y[1] = Y[1] + 2.0 * M_PI;
+		if	( Y[1] >  M_PI )	Y[1] = Y[1] - 2.0 * M_PI;
+		
+		POINVAL[0] = Y[0];
+		POINVAL[1] = Y[1];
+		POINVAL[2] = Y[2];
+		POINVAL[3] = Y[3];
+		
+		//cout << endl << " zapp";
 	}
 }
+
+
+
 

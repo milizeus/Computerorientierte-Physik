@@ -7,12 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2940D7EE1735A3E400B4DAFC /* _4_Gitter.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2940D7ED1735A3E400B4DAFC /* _4_Gitter.1 */; };
+		2940D7F31735A40200B4DAFC /* std-grid.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2940D7F21735A40200B4DAFC /* std-grid.cpp */; };
 		296DD16416F12A3900778FB9 /* _2_Runge_Kutta.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 296DD16316F12A3900778FB9 /* _2_Runge_Kutta.1 */; };
 		296DD17516F12B3000778FB9 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 296DD17416F12B3000778FB9 /* main.cpp */; };
 		296DD17716F12B3000778FB9 /* _1_Aufgabe.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 296DD17616F12B3000778FB9 /* _1_Aufgabe.1 */; };
 		297F0348170C4AB9003FD337 /* _3_RK4_Doppelpendel.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 297F0347170C4AB9003FD337 /* _3_RK4_Doppelpendel.1 */; };
 		297F034F170C4D72003FD337 /* 02_RK4_Oszillator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 297F034E170C4D72003FD337 /* 02_RK4_Oszillator.cpp */; };
 		297F0358170D5A75003FD337 /* 03_RK4_Doppelpendel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 297F0345170C4AB9003FD337 /* 03_RK4_Doppelpendel.cpp */; };
+		29C46A6817368D1A004A4D1A /* _5_Laplace.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 29C46A6717368D1A004A4D1A /* _5_Laplace.1 */; };
+		29C46A7517368D6A004A4D1A /* _5_Poisson.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 29C46A7417368D6A004A4D1A /* _5_Poisson.1 */; };
+		29C46A8217368D91004A4D1A /* _5_Kondensator.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 29C46A8117368D91004A4D1A /* _5_Kondensator.1 */; };
+		29C46A8717368DC6004A4D1A /* 05_Laplace.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C46A8617368DC6004A4D1A /* 05_Laplace.cpp */; };
+		29E1FFF9173BD82F00E00E7B /* 05_Poisson.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29E1FFF8173BD82F00E00E7B /* 05_Poisson.cpp */; };
+		29E1FFFD173BE0CC00E00E7B /* 05_Kondensator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29E1FFFC173BE0CC00E00E7B /* 05_Kondensator.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -22,6 +30,16 @@
 			dstPath = /usr/share/man/man1/;
 			dstSubfolderSpec = 0;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		2940D7E71735A3E400B4DAFC /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+				2940D7EE1735A3E400B4DAFC /* _4_Gitter.1 in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
@@ -55,14 +73,46 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
+		29C46A6117368D1A004A4D1A /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+				29C46A6817368D1A004A4D1A /* _5_Laplace.1 in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		29C46A6E17368D6A004A4D1A /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+				29C46A7517368D6A004A4D1A /* _5_Poisson.1 in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		29C46A7B17368D91004A4D1A /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+				29C46A8217368D91004A4D1A /* _5_Kondensator.1 in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		29126F2816FF94030072A426 /* A_2013-03-04.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "A_2013-03-04.pdf"; sourceTree = "<group>"; };
 		29126F2916FF94210072A426 /* A_2013-03-11.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "A_2013-03-11.pdf"; sourceTree = "<group>"; };
-		2919428116F773A200E0D7A6 /* 02_Runge-Kutta */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "02_Runge-Kutta"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2919428116F773A200E0D7A6 /* 02_Runge-Kutta */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; name = "02_Runge-Kutta"; path = 02_RK4_Oszillator; sourceTree = BUILT_PRODUCTS_DIR; };
 		2919428216F773A200E0D7A6 /* 01_Aufgabe */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = 01_Aufgabe; sourceTree = BUILT_PRODUCTS_DIR; };
-		2919428716F778AE00E0D7A6 /* 03_Doppelpendel */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; name = 03_Doppelpendel; path = "/Users/milizeus/Documents/C++/Computerorientierte Physik/build/Release/03_Doppelpendel"; sourceTree = "<absolute>"; };
+		2940D7E91735A3E400B4DAFC /* 04_Gitter */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = 04_Gitter; sourceTree = BUILT_PRODUCTS_DIR; };
+		2940D7ED1735A3E400B4DAFC /* _4_Gitter.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = _4_Gitter.1; sourceTree = "<group>"; };
+		2940D7F21735A40200B4DAFC /* std-grid.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "std-grid.cpp"; sourceTree = "<group>"; };
 		296DD16316F12A3900778FB9 /* _2_Runge_Kutta.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = _2_Runge_Kutta.1; sourceTree = "<group>"; };
 		296DD17416F12B3000778FB9 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		296DD17616F12B3000778FB9 /* _1_Aufgabe.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = _1_Aufgabe.1; sourceTree = "<group>"; };
@@ -71,10 +121,29 @@
 		297F0347170C4AB9003FD337 /* _3_RK4_Doppelpendel.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = _3_RK4_Doppelpendel.1; sourceTree = "<group>"; };
 		297F034E170C4D72003FD337 /* 02_RK4_Oszillator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 02_RK4_Oszillator.cpp; sourceTree = "<group>"; };
 		297F0359170EF97A003FD337 /* A_2013-03-18.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "A_2013-03-18.pdf"; sourceTree = "<group>"; };
+		29C46A5E17368414004A4D1A /* compuorphys_ue04.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = compuorphys_ue04.pdf; sourceTree = "<group>"; };
+		29C46A6317368D1A004A4D1A /* 05_Laplace */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = 05_Laplace; sourceTree = BUILT_PRODUCTS_DIR; };
+		29C46A6717368D1A004A4D1A /* _5_Laplace.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = _5_Laplace.1; sourceTree = "<group>"; };
+		29C46A7017368D6A004A4D1A /* 05_Poisson */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = 05_Poisson; sourceTree = BUILT_PRODUCTS_DIR; };
+		29C46A7417368D6A004A4D1A /* _5_Poisson.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = _5_Poisson.1; sourceTree = "<group>"; };
+		29C46A7D17368D91004A4D1A /* 05_Kondensator */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = 05_Kondensator; sourceTree = BUILT_PRODUCTS_DIR; };
+		29C46A8117368D91004A4D1A /* _5_Kondensator.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = _5_Kondensator.1; sourceTree = "<group>"; };
+		29C46A8617368DC6004A4D1A /* 05_Laplace.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 05_Laplace.cpp; sourceTree = "<group>"; };
+		29E1FFF7173BD74200E00E7B /* 03_Doppelpendel */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = 03_Doppelpendel; sourceTree = BUILT_PRODUCTS_DIR; };
+		29E1FFF8173BD82F00E00E7B /* 05_Poisson.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 05_Poisson.cpp; sourceTree = "<group>"; };
+		29E1FFFA173BDDE400E00E7B /* Poisson.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Poisson.cpp; sourceTree = "<group>"; };
+		29E1FFFC173BE0CC00E00E7B /* 05_Kondensator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 05_Kondensator.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		2919428416F778AE00E0D7A6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2940D7E61735A3E400B4DAFC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -102,6 +171,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		29C46A6017368D1A004A4D1A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		29C46A6D17368D6A004A4D1A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		29C46A7A17368D91004A4D1A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -111,10 +201,29 @@
 				296DD17316F12B3000778FB9 /* 01_Aufgabe */,
 				296DD16016F12A3900778FB9 /* 02_RK4_Oszillator */,
 				297F0344170C4AB9003FD337 /* 03_RK4_Doppelpendel */,
+				2940D7EA1735A3E400B4DAFC /* 04_Gitter */,
+				29C46A6417368D1A004A4D1A /* 05_Laplace */,
+				29C46A7117368D6A004A4D1A /* 05_Poisson */,
+				29C46A7E17368D91004A4D1A /* 05_Kondensator */,
 				2919428216F773A200E0D7A6 /* 01_Aufgabe */,
 				2919428116F773A200E0D7A6 /* 02_Runge-Kutta */,
 				297F0343170C4AB9003FD337 /* 03_RK4_Doppelpendel */,
+				2940D7E91735A3E400B4DAFC /* 04_Gitter */,
+				29C46A6317368D1A004A4D1A /* 05_Laplace */,
+				29C46A7017368D6A004A4D1A /* 05_Poisson */,
+				29C46A7D17368D91004A4D1A /* 05_Kondensator */,
+				29E1FFF7173BD74200E00E7B /* 03_Doppelpendel */,
 			);
+			sourceTree = "<group>";
+		};
+		2940D7EA1735A3E400B4DAFC /* 04_Gitter */ = {
+			isa = PBXGroup;
+			children = (
+				2940D7F21735A40200B4DAFC /* std-grid.cpp */,
+				29C46A5E17368414004A4D1A /* compuorphys_ue04.pdf */,
+				2940D7ED1735A3E400B4DAFC /* _4_Gitter.1 */,
+			);
+			path = 04_Gitter;
 			sourceTree = "<group>";
 		};
 		296DD16016F12A3900778FB9 /* 02_RK4_Oszillator */ = {
@@ -148,6 +257,34 @@
 			path = 03_RK4_Doppelpendel;
 			sourceTree = "<group>";
 		};
+		29C46A6417368D1A004A4D1A /* 05_Laplace */ = {
+			isa = PBXGroup;
+			children = (
+				29C46A8617368DC6004A4D1A /* 05_Laplace.cpp */,
+				29C46A6717368D1A004A4D1A /* _5_Laplace.1 */,
+			);
+			path = 05_Laplace;
+			sourceTree = "<group>";
+		};
+		29C46A7117368D6A004A4D1A /* 05_Poisson */ = {
+			isa = PBXGroup;
+			children = (
+				29E1FFF8173BD82F00E00E7B /* 05_Poisson.cpp */,
+				29E1FFFA173BDDE400E00E7B /* Poisson.cpp */,
+				29C46A7417368D6A004A4D1A /* _5_Poisson.1 */,
+			);
+			path = 05_Poisson;
+			sourceTree = "<group>";
+		};
+		29C46A7E17368D91004A4D1A /* 05_Kondensator */ = {
+			isa = PBXGroup;
+			children = (
+				29E1FFFC173BE0CC00E00E7B /* 05_Kondensator.cpp */,
+				29C46A8117368D91004A4D1A /* _5_Kondensator.1 */,
+			);
+			path = 05_Kondensator;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -165,7 +302,24 @@
 			);
 			name = 03_Doppelpendel;
 			productName = 03_Doppelpendel;
-			productReference = 2919428716F778AE00E0D7A6 /* 03_Doppelpendel */;
+			productReference = 29E1FFF7173BD74200E00E7B /* 03_Doppelpendel */;
+			productType = "com.apple.product-type.tool";
+		};
+		2940D7E81735A3E400B4DAFC /* 04_Gitter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2940D7F11735A3E400B4DAFC /* Build configuration list for PBXNativeTarget "04_Gitter" */;
+			buildPhases = (
+				2940D7E51735A3E400B4DAFC /* Sources */,
+				2940D7E61735A3E400B4DAFC /* Frameworks */,
+				2940D7E71735A3E400B4DAFC /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = 04_Gitter;
+			productName = 04_Gitter;
+			productReference = 2940D7E91735A3E400B4DAFC /* 04_Gitter */;
 			productType = "com.apple.product-type.tool";
 		};
 		296DD15E16F12A3900778FB9 /* 02_RK4_Oszillator */ = {
@@ -219,6 +373,57 @@
 			productReference = 297F0343170C4AB9003FD337 /* 03_RK4_Doppelpendel */;
 			productType = "com.apple.product-type.tool";
 		};
+		29C46A6217368D1A004A4D1A /* 05_Laplace */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 29C46A6917368D1A004A4D1A /* Build configuration list for PBXNativeTarget "05_Laplace" */;
+			buildPhases = (
+				29C46A5F17368D1A004A4D1A /* Sources */,
+				29C46A6017368D1A004A4D1A /* Frameworks */,
+				29C46A6117368D1A004A4D1A /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = 05_Laplace;
+			productName = 05_Laplace;
+			productReference = 29C46A6317368D1A004A4D1A /* 05_Laplace */;
+			productType = "com.apple.product-type.tool";
+		};
+		29C46A6F17368D6A004A4D1A /* 05_Poisson */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 29C46A7617368D6A004A4D1A /* Build configuration list for PBXNativeTarget "05_Poisson" */;
+			buildPhases = (
+				29C46A6C17368D6A004A4D1A /* Sources */,
+				29C46A6D17368D6A004A4D1A /* Frameworks */,
+				29C46A6E17368D6A004A4D1A /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = 05_Poisson;
+			productName = 05_Poisson;
+			productReference = 29C46A7017368D6A004A4D1A /* 05_Poisson */;
+			productType = "com.apple.product-type.tool";
+		};
+		29C46A7C17368D91004A4D1A /* 05_Kondensator */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 29C46A8317368D91004A4D1A /* Build configuration list for PBXNativeTarget "05_Kondensator" */;
+			buildPhases = (
+				29C46A7917368D91004A4D1A /* Sources */,
+				29C46A7A17368D91004A4D1A /* Frameworks */,
+				29C46A7B17368D91004A4D1A /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = 05_Kondensator;
+			productName = 05_Kondensator;
+			productReference = 29C46A7D17368D91004A4D1A /* 05_Kondensator */;
+			productType = "com.apple.product-type.tool";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -244,6 +449,10 @@
 				296DD15E16F12A3900778FB9 /* 02_RK4_Oszillator */,
 				2919428616F778AE00E0D7A6 /* 03_Doppelpendel */,
 				297F0342170C4AB9003FD337 /* 03_RK4_Doppelpendel */,
+				2940D7E81735A3E400B4DAFC /* 04_Gitter */,
+				29C46A6217368D1A004A4D1A /* 05_Laplace */,
+				29C46A6F17368D6A004A4D1A /* 05_Poisson */,
+				29C46A7C17368D91004A4D1A /* 05_Kondensator */,
 			);
 		};
 /* End PBXProject section */
@@ -253,6 +462,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2940D7E51735A3E400B4DAFC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2940D7F31735A40200B4DAFC /* std-grid.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,6 +494,30 @@
 			buildActionMask = 2147483647;
 			files = (
 				297F0358170D5A75003FD337 /* 03_RK4_Doppelpendel.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		29C46A5F17368D1A004A4D1A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				29C46A8717368DC6004A4D1A /* 05_Laplace.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		29C46A6C17368D6A004A4D1A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				29E1FFF9173BD82F00E00E7B /* 05_Poisson.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		29C46A7917368D91004A4D1A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				29E1FFFD173BE0CC00E00E7B /* 05_Kondensator.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,6 +597,20 @@
 			};
 			name = Release;
 		};
+		2940D7EF1735A3E400B4DAFC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		2940D7F01735A3E400B4DAFC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		296DD16516F12A3900778FB9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -398,6 +653,48 @@
 			};
 			name = Release;
 		};
+		29C46A6A17368D1A004A4D1A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		29C46A6B17368D1A004A4D1A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		29C46A7717368D6A004A4D1A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		29C46A7817368D6A004A4D1A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		29C46A8417368D91004A4D1A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		29C46A8517368D91004A4D1A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -415,6 +712,15 @@
 			buildConfigurations = (
 				291F638316EF6ED9001F8A4C /* Debug */,
 				291F638416EF6ED9001F8A4C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2940D7F11735A3E400B4DAFC /* Build configuration list for PBXNativeTarget "04_Gitter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2940D7EF1735A3E400B4DAFC /* Debug */,
+				2940D7F01735A3E400B4DAFC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -442,6 +748,33 @@
 			buildConfigurations = (
 				297F0349170C4AB9003FD337 /* Debug */,
 				297F034A170C4AB9003FD337 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		29C46A6917368D1A004A4D1A /* Build configuration list for PBXNativeTarget "05_Laplace" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				29C46A6A17368D1A004A4D1A /* Debug */,
+				29C46A6B17368D1A004A4D1A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		29C46A7617368D6A004A4D1A /* Build configuration list for PBXNativeTarget "05_Poisson" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				29C46A7717368D6A004A4D1A /* Debug */,
+				29C46A7817368D6A004A4D1A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		29C46A8317368D91004A4D1A /* Build configuration list for PBXNativeTarget "05_Kondensator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				29C46A8417368D91004A4D1A /* Debug */,
+				29C46A8517368D91004A4D1A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
