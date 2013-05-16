@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2910857B173C269E004C7E13 /* _6_Monte_Carlo.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2910857A173C269E004C7E13 /* _6_Monte_Carlo.1 */; };
+		29108580173C276B004C7E13 /* MonteCarlo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2910857F173C276B004C7E13 /* MonteCarlo.cpp */; };
+		29108583173C2923004C7E13 /* Analyse.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29108581173C2923004C7E13 /* Analyse.cpp */; };
+		29108584173C2923004C7E13 /* Analyse2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29108582173C2923004C7E13 /* Analyse2.cpp */; };
 		2940D7EE1735A3E400B4DAFC /* _4_Gitter.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2940D7ED1735A3E400B4DAFC /* _4_Gitter.1 */; };
 		2940D7F31735A40200B4DAFC /* std-grid.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2940D7F21735A40200B4DAFC /* std-grid.cpp */; };
 		296DD16416F12A3900778FB9 /* _2_Runge_Kutta.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 296DD16316F12A3900778FB9 /* _2_Runge_Kutta.1 */; };
@@ -24,12 +28,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		2919428516F778AE00E0D7A6 /* CopyFiles */ = {
+		29108574173C269E004C7E13 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
 			dstSubfolderSpec = 0;
 			files = (
+				2910857B173C269E004C7E13 /* _6_Monte_Carlo.1 in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
@@ -106,6 +111,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		29108576173C269E004C7E13 /* 06_Monte-Carlo */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "06_Monte-Carlo"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2910857A173C269E004C7E13 /* _6_Monte_Carlo.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = _6_Monte_Carlo.1; sourceTree = "<group>"; };
+		2910857F173C276B004C7E13 /* MonteCarlo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MonteCarlo.cpp; sourceTree = "<group>"; };
+		29108581173C2923004C7E13 /* Analyse.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Analyse.cpp; sourceTree = "<group>"; };
+		29108582173C2923004C7E13 /* Analyse2.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Analyse2.cpp; sourceTree = "<group>"; };
 		29126F2816FF94030072A426 /* A_2013-03-04.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "A_2013-03-04.pdf"; sourceTree = "<group>"; };
 		29126F2916FF94210072A426 /* A_2013-03-11.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "A_2013-03-11.pdf"; sourceTree = "<group>"; };
 		2919428116F773A200E0D7A6 /* 02_Runge-Kutta */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; name = "02_Runge-Kutta"; path = 02_RK4_Oszillator; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -129,14 +139,13 @@
 		29C46A7D17368D91004A4D1A /* 05_Kondensator */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = 05_Kondensator; sourceTree = BUILT_PRODUCTS_DIR; };
 		29C46A8117368D91004A4D1A /* _5_Kondensator.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = _5_Kondensator.1; sourceTree = "<group>"; };
 		29C46A8617368DC6004A4D1A /* 05_Laplace.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 05_Laplace.cpp; sourceTree = "<group>"; };
-		29E1FFF7173BD74200E00E7B /* 03_Doppelpendel */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = 03_Doppelpendel; sourceTree = BUILT_PRODUCTS_DIR; };
 		29E1FFF8173BD82F00E00E7B /* 05_Poisson.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 05_Poisson.cpp; sourceTree = "<group>"; };
 		29E1FFFA173BDDE400E00E7B /* Poisson.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Poisson.cpp; sourceTree = "<group>"; };
 		29E1FFFC173BE0CC00E00E7B /* 05_Kondensator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 05_Kondensator.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		2919428416F778AE00E0D7A6 /* Frameworks */ = {
+		29108573173C269E004C7E13 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -195,6 +204,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		29108577173C269E004C7E13 /* 06_Monte-Carlo */ = {
+			isa = PBXGroup;
+			children = (
+				2910857F173C276B004C7E13 /* MonteCarlo.cpp */,
+				29108581173C2923004C7E13 /* Analyse.cpp */,
+				29108582173C2923004C7E13 /* Analyse2.cpp */,
+				2910857A173C269E004C7E13 /* _6_Monte_Carlo.1 */,
+			);
+			path = "06_Monte-Carlo";
+			sourceTree = "<group>";
+		};
 		291F637316EF6ED9001F8A4C = {
 			isa = PBXGroup;
 			children = (
@@ -205,6 +225,7 @@
 				29C46A6417368D1A004A4D1A /* 05_Laplace */,
 				29C46A7117368D6A004A4D1A /* 05_Poisson */,
 				29C46A7E17368D91004A4D1A /* 05_Kondensator */,
+				29108577173C269E004C7E13 /* 06_Monte-Carlo */,
 				2919428216F773A200E0D7A6 /* 01_Aufgabe */,
 				2919428116F773A200E0D7A6 /* 02_Runge-Kutta */,
 				297F0343170C4AB9003FD337 /* 03_RK4_Doppelpendel */,
@@ -212,7 +233,7 @@
 				29C46A6317368D1A004A4D1A /* 05_Laplace */,
 				29C46A7017368D6A004A4D1A /* 05_Poisson */,
 				29C46A7D17368D91004A4D1A /* 05_Kondensator */,
-				29E1FFF7173BD74200E00E7B /* 03_Doppelpendel */,
+				29108576173C269E004C7E13 /* 06_Monte-Carlo */,
 			);
 			sourceTree = "<group>";
 		};
@@ -288,21 +309,21 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		2919428616F778AE00E0D7A6 /* 03_Doppelpendel */ = {
+		29108575173C269E004C7E13 /* 06_Monte-Carlo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2919428F16F778AE00E0D7A6 /* Build configuration list for PBXNativeTarget "03_Doppelpendel" */;
+			buildConfigurationList = 2910857E173C269E004C7E13 /* Build configuration list for PBXNativeTarget "06_Monte-Carlo" */;
 			buildPhases = (
-				2919428316F778AE00E0D7A6 /* Sources */,
-				2919428416F778AE00E0D7A6 /* Frameworks */,
-				2919428516F778AE00E0D7A6 /* CopyFiles */,
+				29108572173C269E004C7E13 /* Sources */,
+				29108573173C269E004C7E13 /* Frameworks */,
+				29108574173C269E004C7E13 /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = 03_Doppelpendel;
-			productName = 03_Doppelpendel;
-			productReference = 29E1FFF7173BD74200E00E7B /* 03_Doppelpendel */;
+			name = "06_Monte-Carlo";
+			productName = "06_Monte-Carlo";
+			productReference = 29108576173C269E004C7E13 /* 06_Monte-Carlo */;
 			productType = "com.apple.product-type.tool";
 		};
 		2940D7E81735A3E400B4DAFC /* 04_Gitter */ = {
@@ -447,21 +468,24 @@
 			targets = (
 				296DD17116F12B3000778FB9 /* 01_Aufgabe */,
 				296DD15E16F12A3900778FB9 /* 02_RK4_Oszillator */,
-				2919428616F778AE00E0D7A6 /* 03_Doppelpendel */,
 				297F0342170C4AB9003FD337 /* 03_RK4_Doppelpendel */,
 				2940D7E81735A3E400B4DAFC /* 04_Gitter */,
 				29C46A6217368D1A004A4D1A /* 05_Laplace */,
 				29C46A6F17368D6A004A4D1A /* 05_Poisson */,
 				29C46A7C17368D91004A4D1A /* 05_Kondensator */,
+				29108575173C269E004C7E13 /* 06_Monte-Carlo */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		2919428316F778AE00E0D7A6 /* Sources */ = {
+		29108572173C269E004C7E13 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29108580173C276B004C7E13 /* MonteCarlo.cpp in Sources */,
+				29108583173C2923004C7E13 /* Analyse.cpp in Sources */,
+				29108584173C2923004C7E13 /* Analyse2.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -524,14 +548,14 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		2919428D16F778AE00E0D7A6 /* Debug */ = {
+		2910857C173C269E004C7E13 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
-		2919428E16F778AE00E0D7A6 /* Release */ = {
+		2910857D173C269E004C7E13 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -698,14 +722,13 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2919428F16F778AE00E0D7A6 /* Build configuration list for PBXNativeTarget "03_Doppelpendel" */ = {
+		2910857E173C269E004C7E13 /* Build configuration list for PBXNativeTarget "06_Monte-Carlo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				2919428D16F778AE00E0D7A6 /* Debug */,
-				2919428E16F778AE00E0D7A6 /* Release */,
+				2910857C173C269E004C7E13 /* Debug */,
+				2910857D173C269E004C7E13 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
 		};
 		291F637716EF6ED9001F8A4C /* Build configuration list for PBXProject "Computerorientierte Physik" */ = {
 			isa = XCConfigurationList;
