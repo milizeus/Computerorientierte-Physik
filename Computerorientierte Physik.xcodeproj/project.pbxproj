@@ -16,9 +16,9 @@
 		296DD16416F12A3900778FB9 /* _2_Runge_Kutta.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 296DD16316F12A3900778FB9 /* _2_Runge_Kutta.1 */; };
 		296DD17516F12B3000778FB9 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 296DD17416F12B3000778FB9 /* main.cpp */; };
 		296DD17716F12B3000778FB9 /* _1_Aufgabe.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 296DD17616F12B3000778FB9 /* _1_Aufgabe.1 */; };
+		296F782C190AA8400070614B /* 03_RK4_Doppelpendel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 297F0345170C4AB9003FD337 /* 03_RK4_Doppelpendel.cpp */; };
 		297F0348170C4AB9003FD337 /* _3_RK4_Doppelpendel.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 297F0347170C4AB9003FD337 /* _3_RK4_Doppelpendel.1 */; };
 		297F034F170C4D72003FD337 /* 02_RK4_Oszillator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 297F034E170C4D72003FD337 /* 02_RK4_Oszillator.cpp */; };
-		297F0358170D5A75003FD337 /* 03_RK4_Doppelpendel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 297F0345170C4AB9003FD337 /* 03_RK4_Doppelpendel.cpp */; };
 		29C46A6817368D1A004A4D1A /* _5_Laplace.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 29C46A6717368D1A004A4D1A /* _5_Laplace.1 */; };
 		29C46A7517368D6A004A4D1A /* _5_Poisson.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 29C46A7417368D6A004A4D1A /* _5_Poisson.1 */; };
 		29C46A8217368D91004A4D1A /* _5_Kondensator.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 29C46A8117368D91004A4D1A /* _5_Kondensator.1 */; };
@@ -139,6 +139,8 @@
 		29C46A7D17368D91004A4D1A /* 05_Kondensator */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = 05_Kondensator; sourceTree = BUILT_PRODUCTS_DIR; };
 		29C46A8117368D91004A4D1A /* _5_Kondensator.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = _5_Kondensator.1; sourceTree = "<group>"; };
 		29C46A8617368DC6004A4D1A /* 05_Laplace.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 05_Laplace.cpp; sourceTree = "<group>"; };
+		29CB1AF31755024D00EF7660 /* compuorphys_ue05.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = compuorphys_ue05.pdf; sourceTree = "<group>"; };
+		29CB1AF41755026700EF7660 /* compuorphys_ue06.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = compuorphys_ue06.pdf; sourceTree = "<group>"; };
 		29E1FFF8173BD82F00E00E7B /* 05_Poisson.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 05_Poisson.cpp; sourceTree = "<group>"; };
 		29E1FFFA173BDDE400E00E7B /* Poisson.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Poisson.cpp; sourceTree = "<group>"; };
 		29E1FFFC173BE0CC00E00E7B /* 05_Kondensator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 05_Kondensator.cpp; sourceTree = "<group>"; };
@@ -207,6 +209,7 @@
 		29108577173C269E004C7E13 /* 06_Monte-Carlo */ = {
 			isa = PBXGroup;
 			children = (
+				29CB1AF41755026700EF7660 /* compuorphys_ue06.pdf */,
 				2910857F173C276B004C7E13 /* MonteCarlo.cpp */,
 				29108581173C2923004C7E13 /* Analyse.cpp */,
 				29108582173C2923004C7E13 /* Analyse2.cpp */,
@@ -236,6 +239,7 @@
 				29108576173C269E004C7E13 /* 06_Monte-Carlo */,
 			);
 			sourceTree = "<group>";
+			usesTabs = 1;
 		};
 		2940D7EA1735A3E400B4DAFC /* 04_Gitter */ = {
 			isa = PBXGroup;
@@ -281,6 +285,7 @@
 		29C46A6417368D1A004A4D1A /* 05_Laplace */ = {
 			isa = PBXGroup;
 			children = (
+				29CB1AF31755024D00EF7660 /* compuorphys_ue05.pdf */,
 				29C46A8617368DC6004A4D1A /* 05_Laplace.cpp */,
 				29C46A6717368D1A004A4D1A /* _5_Laplace.1 */,
 			);
@@ -451,7 +456,7 @@
 		291F637416EF6ED9001F8A4C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0460;
+				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "uni-graz";
 			};
 			buildConfigurationList = 291F637716EF6ED9001F8A4C /* Build configuration list for PBXProject "Computerorientierte Physik" */;
@@ -517,7 +522,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				297F0358170D5A75003FD337 /* 03_RK4_Doppelpendel.cpp in Sources */,
+				296F782C190AA8400070614B /* 03_RK4_Doppelpendel.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -566,7 +571,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -599,7 +603,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -729,6 +732,7 @@
 				2910857D173C269E004C7E13 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		291F637716EF6ED9001F8A4C /* Build configuration list for PBXProject "Computerorientierte Physik" */ = {
 			isa = XCConfigurationList;
