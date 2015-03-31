@@ -1,8 +1,7 @@
 # Created by https://www.gitignore.io
 
 ### Xcode ###
-DerivedData/
-build/
+DerivedData
 *.pbxuser
 !default.pbxuser
 *.mode1v3

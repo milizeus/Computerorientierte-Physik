@@ -3,7 +3,7 @@
 /* Aufgabe: Runge Kutta vierter Ordnung                                                 */
 /* file:    02_RK4_Oszillator.cpp                                                       */
 /* Autor:   Milionis Philipp / 1010925                                                  */
-/* Datum:   2013-03-12                                                                  */
+/* Datum:   2015-03-12                                                                  */
 /****************************************************************************************/
 
 #include <stdio.h>
